@@ -1,3 +1,7 @@
+.relative {
+  position: relative;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#lottery {
+  position: relative;
+  height: 100vh;
+  min-height: 512px;
+  overflow: hidden;
+}
+
+#lottery .lottery-bg {
+  position: absolute;
+  background-color: black;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;  
+}
+
+.countdown-wrapper ul {
+  display: block;
+  width: 100%;
+}
+
+.countdown-wrapper li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+  width: 20%;
+  color: #fff;
+  text-align: center;
+}
+
+.countdown-wrapper li span {
+  display: block;
+  font-size: 4.5rem;
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
