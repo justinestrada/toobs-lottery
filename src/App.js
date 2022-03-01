@@ -1,59 +1,82 @@
-import logo from './logo.svg';
 import bg_star from './images/bg-star.svg';
 import './App.css';
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
+import MainNavbar from './components/MainNavbar'
+import Footer from './components/Footer'
+import Countdown from './components/Countdown'
+import FAQ from './components/Faq'
 
 function App() {
+  const prize_amount = 5000
   return (
     <main className="App">
-      {/*
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      */}
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">Toobs Lottery</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <section id="lottery">
+      <MainNavbar />
+      <section id="lottery" className="d-flex justify-content-center align-items-center py-5">
         <img src={bg_star} className="lottery-bg" alt="Background"/>
-        <Container className="relative">
-          <div className="countdown-wrapper">
-            <ul>
-              <li><span id="days"></span>days</li>
-              <li><span id="hours"></span>Hours</li>
-              <li><span id="minutes"></span>Minutes</li>
-              <li><span id="seconds"></span>Seconds</li>
-            </ul>
-          </div>          
+        <Container className="text-center relative">
+          <div className="lottery-prize mb-5">
+            <div className="lottery-prize_amount">${prize_amount}</div>
+            <div className="lottery-prize_text">in prizes!</div>
+          </div>
+          <div>
+            <div className="mb-3" style={{fontSize: '24px', color: 'white', fontWeight: 'bold' }}>Get your tickets now!</div>
+            <Countdown />
+            <div className="mt-3" style={{ color: 'white', fontWeight: 'bold' }}>until the draw</div>   
+          </div>
         </Container>
       </section>
+      <section id="how-to-enter" className="py-5">
+        <Container>
+          <Row>
+            <Col>
+              <h2 className="text-center mb-4">How To Enter</h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4} className="mb-3 mb-lg-0">
+              <Card className="w-100">
+                <Card.Body>
+                  <Card.Title>Shop Toobs</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Step 1</Card.Subtitle>
+                  <Card.Text>
+                    Earn 1 lottery ticket for every $500 you spend.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={4} className="mb-3 mb-lg-0">
+              <Card className="w-100">
+                <Card.Body>
+                  <Card.Title>Wait For The Draw</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Step 2</Card.Subtitle>
+                  <Card.Text>
+                    The previous months Lottery Draw happens on the 1st of every month.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={4} className="mb-3 mb-lg-0">
+              <Card className="w-100">
+                <Card.Body>
+                  <Card.Title>Check For Prizes</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Step 3</Card.Subtitle>
+                  <Card.Text>
+                    Once the Lottery round is over. Come back here to see if you've won. Then repeat step 1.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="text-center">
+              <Button variant="primary" href="https://toobsdistribution.com" target="_blank">Shop Toobs</Button>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <FAQ />
+      <Footer />
     </main>
   );
 }

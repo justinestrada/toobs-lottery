@@ -2,72 +2,47 @@
   position: relative;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 #lottery {
   position: relative;
+  background-color: black;
+  /*
   height: 100vh;
   min-height: 512px;
+  */
   overflow: hidden;
 }
 
 #lottery .lottery-bg {
   position: absolute;
-  background-color: black;
   top: 0;
   left: 0;
   object-fit: cover;
   width: 100%;  
 }
 
+#lottery .lottery-prize_amount {
+  font-size: 48px;
+  color: #feca2d;
+}
+
+#lottery .lottery-prize_text {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
 .countdown-wrapper ul {
   display: block;
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .countdown-wrapper li {
   display: inline-block;
-  font-size: 1.5em;
   list-style-type: none;
-  padding: 1em;
-  text-transform: uppercase;
+  padding: 0.25rem;
+  font-size: 0.875rem;
   width: 20%;
   color: #fff;
   text-align: center;
@@ -75,10 +50,20 @@
 
 .countdown-wrapper li span {
   display: block;
-  font-size: 4.5rem;
-  background: #fff;
-  color: #000;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 15px;
+  width: fit-content;
+  min-width: 32px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .countdown-wrapper li span {
+    font-size: 2rem;
+  }  
 }
