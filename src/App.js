@@ -5,6 +5,7 @@ import { Card, Button } from 'react-bootstrap'
 import MainNavbar from './components/MainNavbar'
 import Footer from './components/Footer'
 import Countdown from './components/Countdown'
+import MyTickets from './components/MyTickets'
 import FAQ from './components/Faq'
 
 function App() {
@@ -21,11 +22,16 @@ function App() {
           </div>
           <div>
             <div className="mb-3" style={{fontSize: '24px', color: 'white', fontWeight: 'bold' }}>Get your tickets now!</div>
-            <Countdown />
+            <Row className="justify-content-center">
+              <Col md={7} lg={6} lg={5}>
+                <Countdown />
+              </Col>
+            </Row>
             <div className="mt-3" style={{ color: 'white', fontWeight: 'bold' }}>until the draw</div>   
           </div>
         </Container>
       </section>
+      <MyTickets />
       <section id="how-to-enter" className="py-5">
         <Container>
           <Row>

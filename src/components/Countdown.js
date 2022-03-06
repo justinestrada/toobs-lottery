@@ -18,17 +18,13 @@ const Countdown = () => {
     //}
   }, second)
   return (
-    <div className="row justify-content-center">
-      <div className="col-md-8 col-lg-7 col-xl-6">
-        <div className="countdown-wrapper">
-          <ul>
-            <li><span id="days"></span>Days</li>
-            <li><span id="hours"></span>Hours</li>
-            <li><span id="minutes"></span>Minutes</li>
-            <li><span id="seconds"></span>Seconds</li>
-          </ul>
-        </div>
-      </div>
+    <div className="countdown-wrapper">
+      <ul>
+        <li><span id="days"></span>Days</li>
+        <li><span id="hours"></span>Hours</li>
+        <li><span id="minutes"></span>Minutes</li>
+        <li><span id="seconds"></span>Seconds</li>
+      </ul>
     </div>
   )
 }

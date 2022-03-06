@@ -62,8 +62,6 @@
   margin-bottom: 0.5rem;
 }
 
-@media (min-width: 992px) {
-  .countdown-wrapper li span {
-    font-size: 2rem;
-  }  
+section#how-to-enter {
+  background: lightgray;
 }
